@@ -84,7 +84,21 @@ The sample implementation runs three AI agents as independent `py-libp2p` peers.
                                └─────────────┘
 ```
 
-## Part 2: Components
+## Part 2: Iterative Multi-Agent Orchestration
+
+### Steps followed in sample implementation:
+
+I. Orchestrator LLM receives an objective from the user.
+
+II. Orchestrator LLM selects an AI agent.
+
+III. Selected AI agent receives recent shared conversation history, generates a response and synchronizes the response with all other AI agents using decentralized P2P communication.
+
+IV. Agent interaction is logged in EtherCalc spreadsheet in real-time
+
+V. Steps II to IV are repeated iteratively until orchestrator ends the communication or maximum number of orchestration turns is reached.
+
+## Part 3: Components
 
 ### 1. py-libp2p — Agent-to-Agent Communication
 
@@ -254,7 +268,7 @@ This provides a simple human-readable record of the multi-agent workflow.
 
 ---
 
-## Part 3: Prerequisites
+## Part 4: Prerequisites
 
 Install the following:
 

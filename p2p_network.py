@@ -6,8 +6,8 @@ from libp2p import new_host
 from libp2p.crypto.ed25519 import create_new_key_pair
 from libp2p.peer.peerinfo import info_from_p2p_addr
 
-from .config import CONNECTION_TIMEOUT, P2P_TIMEOUT, PROTOCOL_ID
-from .protocol import receive_frame, send_frame
+from config import CONNECTION_TIMEOUT, P2P_TIMEOUT, PROTOCOL_ID
+from protocol import receive_frame, send_frame
 
 
 def get_tcp_address(host):
@@ -164,7 +164,7 @@ def create_agent_host(
     )
 
     async def handler(stream):
-        from .agent import handle_incoming_request
+        from agent import handle_incoming_request
 
         await handle_incoming_request(
             stream,

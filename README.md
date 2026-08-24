@@ -4,9 +4,6 @@ A Peer-to-Peer multi-agent AI application that combines **py-libp2p**, **SEA-LIO
 
 ## Project Structure
 
-The Python modules provide reusable components for building P2P multi-agent AI system with decentralized agent communication. 
-
-`main.py` is a sample implementation that demonstrates how these components can be composed into a three-agent workflow using SEA-LION, libp2p, LiteLLM, and EtherCalc.
 
 ```text
 project/
@@ -42,15 +39,11 @@ This project demonstrates:
 | Technology         | Role in this project                                             |
 | ------------------ | ---------------------------------------------------------------- |
 | **py-libp2p**      | Provides P2P networking and communication between agents         |
-| **SEA-LION**       | Acts as the orchestration controller that selects the next agent |
+| **SEA-LION LLM**    | Acts as the orchestration controller that selects the next agent |
 | **LiteLLM**        | Provides the unified LLM API used by the application             |
-| **Ollama**         | Runs the models locally                                          |
-| **SEA-LION model** | Provides orchestration/routing decisions                         |
+| **Ollama**         | Runs the models locally                                          |                        |
 | **Gemma 3:1B**     | Provides reasoning/generation for all worker agents              |
 | **EtherCalc**      | Provides a shared spreadsheet for recording agent activity       |
-| **Trio**           | Provides asynchronous execution and concurrency                  |
-| **Multiaddr**      | Represents libp2p network addresses                              |
-| **HTTPX**          | Sends HTTP requests to EtherCalc                                 |
 
 
 # Example Agent Configuration: 
@@ -97,7 +90,7 @@ The sample implementation runs three AI agents as independent `py-libp2p` peers.
 
 `py-libp2p` provides the peer-to-peer networking layer.
 
-Each agent runs its own libp2p host:
+Each AI agent runs its own libp2p host:
 
 ```text
 Agent 1 → TCP 9101
@@ -112,7 +105,7 @@ The application defines a custom protocol:
 ```
 Each peer can establish a stream to another peer and exchange JSON messages.
 
-### 2. SEA-LION — Orchestration
+### 2. SEA-LION LLM — Orchestration
 
 SEA-LION is used as the orchestration controller.
 
@@ -162,11 +155,11 @@ Python application
 
 The implementation uses LiteLLM for both the SEA-LION orchestration model and the worker-agent model.
 
-### 4. Ollama — Local Model Runtime
+### 4. Ollama — Local LLM Runtime
 
-Ollama runs the models locally.
+Ollama runs the LLMs locally.
 
-The project uses two models:
+The project uses two LLMs:
 
 ```text
 SEA-LION:

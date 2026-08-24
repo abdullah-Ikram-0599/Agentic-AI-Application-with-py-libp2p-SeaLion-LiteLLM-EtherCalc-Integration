@@ -1,8 +1,8 @@
 import logging
 from dataclasses import dataclass
 
-from .protocol import receive_frame, send_frame
-from .state import SharedState
+from protocol import receive_frame, send_frame
+from state import SharedState
 
 logger = logging.getLogger(__name__)
 
@@ -118,7 +118,7 @@ async def handle_incoming_request(
                 "summary of your result suitable for sending "
                 "back to the requesting agent."
             ),
-        )
+        )      
 
         await ethercalc.append(
             response,
@@ -148,8 +148,10 @@ async def handle_incoming_request(
                     "content": f"{type(exc).__name__}: {exc}",
                 },
             )
+          
         except Exception:
             pass
 
     finally:
         await stream.close()
+  

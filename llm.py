@@ -3,7 +3,7 @@ import asyncio
 import trio
 from litellm import acompletion
 
-from .config import LLM_TIMEOUT, OLLAMA_API_BASE
+from config import LLM_TIMEOUT, OLLAMA_API_BASE
 
 
 class LiteLLMClient:

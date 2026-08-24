@@ -1,4 +1,4 @@
-from .config import (
+from config import (
     AGENT1_ID,
     AGENT2_ID,
     AGENT3_ID,
@@ -104,19 +104,27 @@ class SeaLionOrchestrator:
             temperature=0.0,
         )
 
+        print("Starting SEA-LION orchestration controller decision-making...")
+
         decision = decision.strip().lower()
 
+
         if "agent1" in decision:
+            print("SeaLion has selected Agent 1")
             return AGENT1_ID
 
         if "agent2" in decision:
+            print("SeaLion has selected Agent 2")
             return AGENT2_ID
 
         if "agent3" in decision:
+            print("SeaLion has selected Agent 3")
             return AGENT3_ID
 
         if "done" in decision:
+            print("SeaLion has selected Done")
             return "done"
+
 
         raise ValueError(
             "SEA-LION returned an invalid routing decision: "

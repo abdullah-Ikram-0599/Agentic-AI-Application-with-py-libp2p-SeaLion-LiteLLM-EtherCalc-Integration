@@ -1,7 +1,7 @@
 import json
 import struct
 
-from .config import MAX_FRAME_SIZE
+from config import MAX_FRAME_SIZE
 
 
 async def read_exact(stream, size):

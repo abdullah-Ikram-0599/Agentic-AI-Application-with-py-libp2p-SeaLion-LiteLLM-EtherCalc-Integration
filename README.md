@@ -30,7 +30,6 @@ This project demonstrates:
 * Using Gemma 3:1B to power the individual agents.
 * Using EtherCalc for spreadsheet-based logging and visualization of agent activity.
 * Sharing agent operations and workflow results between peers using py-libp2p.
-* Implementing a sample P2P agent-to-agent request.
 * Running a multi-agent workflow consisting of risk analysis, implementation, and validation.
 
 
@@ -131,8 +130,6 @@ agent2
 agent3
 done
 ```
-
-The controller uses workflow state to prevent repeatedly selecting agents whose required stage has already been completed.
 
 ### 3. LiteLLM — LLM Interface
 
@@ -272,12 +269,11 @@ This provides a simple human-readable record of the multi-agent workflow.
 
 Install the following:
 
-* Python 3
+* Python 
 * Git
 * Ollama
 * Docker
 * EtherCalc
-* An Ollama-compatible machine capable of running the selected models
 
 Clone the repository:
 

@@ -23,12 +23,12 @@ project/
 
 This project demonstrates:
 
-* Setting up `py-libp2p` nodes for P2P messaging between AI agents.
-* Integrating SEA-LION for AI-agent orchestration.
+* Setting up `py-libp2p` nodes for P2P interaction between AI agents.
+* Integrating SEA-LION LLM for AI-agent orchestration.
 * Using LiteLLM as the LLM interface.
 * Running local models through Ollama.
-* Using Gemma 3:1B to power the individual agents.
-* Using EtherCalc for spreadsheet-based logging and visualization of agent activity.
+* Using Gemma 3:1B to power the worker agents.
+* Using EtherCalc for spreadsheet-based logging of agent activity.
 * Sharing agent operations and workflow results between peers using py-libp2p.
 * Running a multi-agent workflow consisting of risk analysis, implementation, and validation.
 
@@ -369,7 +369,7 @@ The resulting spreadsheet can be accessed at:
 http://localhost:8000/sea-lion-agent-collaboration
 ```
 
-The application automatically appends agent operations to this room.
+The application automatically appends agent operations to this room in real-time. 
 
 ---
 
@@ -403,10 +403,10 @@ docker run --rm \
   abdullahikram/sealion-multi-agent-ethercalc-pylibp2p-litellm:latest
 ```
 
-The three ports correspond to the three libp2p agents:
+The three ports correspond to the three py-libp2p peers:
 
 ```text
-9101 → Agent 1
-9102 → Agent 2
-9103 → Agent 3
+9101 → Peer 1
+9102 → Peer 2
+9103 → Peer 3
 ```

@@ -397,6 +397,7 @@ Run it:
 
 ```bash
 docker run --rm \
+  --add-host=host.docker.internal:host-gateway \
   -p 9101:9101 \
   -p 9102:9102 \
   -p 9103:9103 \

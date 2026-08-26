@@ -52,6 +52,7 @@ The sample implementation runs three AI agents as independent `py-libp2p` peers.
 ## Part 1: Architecture
 
 ```text
+                                Architecture
                          ┌─────────────────────────┐
                          │    SEA-LION Controller  │
                          │                         │
